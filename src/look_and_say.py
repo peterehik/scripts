@@ -8,7 +8,7 @@ def look_and_say(n: int):
         print('1')
         return
     n -= 1
-    sequence = ['1']
+    sequence = '1'
     print('1')
     while n > 0:
         sequence = next_look_and_say_sequence(sequence)
@@ -16,7 +16,7 @@ def look_and_say(n: int):
         n -= 1
 
 
-def next_look_and_say_sequence(sequence: list):
+def next_look_and_say_sequence(sequence: str):
     count = 1
     cur = sequence[0]
     result = []
@@ -32,14 +32,7 @@ def next_look_and_say_sequence(sequence: list):
             cur = item
     result.insert(cur_spot, str(count))
     result.insert(cur_spot + 1, cur)
-    return result
-
-
-def test_next_look_and_say_sequence():
-    assert next_look_and_say_sequence(['1']), '11'
-    assert next_look_and_say_sequence(['11']), '21'
-    assert next_look_and_say_sequence(['21']), '1211'
-    assert next_look_and_say_sequence(['1211']), '111221'
+    return ''.join(result)
 
 
 def main():

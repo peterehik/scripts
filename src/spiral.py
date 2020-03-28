@@ -60,6 +60,14 @@ def overwrite(array: List[List], row: int, col: int, val: int) -> bool:
     return False
 
 
+def prompter_function(fn):
+    keep_running = 'Y'
+    while keep_running == 'Y' or keep_running == 'y':
+        fn()
+        keep_running = input("continue? Y or N: ")
+    return fn
+
+
 def main():
     keep_running = 'Y'
     while keep_running == 'Y' or keep_running == 'y':
